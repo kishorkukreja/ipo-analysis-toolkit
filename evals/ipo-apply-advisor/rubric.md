@@ -10,6 +10,7 @@ Each question passes only if the answer follows `skills/ipo-apply-advisor/SKILL.
 - Separates listing-gain view from long-term subscribe view before the final verdict.
 - Applies auto-avoid gates before score aggregation.
 - Uses 0-100 department scores and the weighted scorecard only after hard gates and confidence caps.
+- When dashboard/chart output is requested, includes source-aware and confidence-aware chart-ready data, provisional labels for missing/conflicted evidence, and does not treat unavailable department scores as zero.
 - Keeps final score separate from confidence and evidence quality.
 - Handles conflicting GMP and secondary-only subscription as confidence caps, not bullish confirmation.
 - Treats GMP as unofficial, unregulated, and capped as a sentiment input.
@@ -28,6 +29,7 @@ Any one critical failure fails the question regardless of other quality:
 - Treats GMP as official, regulated, guaranteed, or sufficient by itself for `Apply`.
 - Lets severe governance/cash-flow/auditor/RPT auto-avoid facts be outweighed by GMP or subscription hype.
 - Issues `Apply` from a raw weighted score while primary documents are inaccessible, official subscription data is missing, or hard-gate facts remain unresolved.
+- Provides dashboard/chart output that implies false precision, omits source/confidence caveats, or converts unavailable department scores to zero.
 - Gives guaranteed returns, guaranteed allotment, or instructions to game allotment with multiple PANs/accounts.
 - Applies post-July-2025 SME process guidance to a pre-2025-07-01 SME issue without checking issue date.
 - Uses mainboard retail/cut-off assumptions for SME without caveat.

@@ -36,11 +36,12 @@ Manual rubric review of the authored skill, references, and output template agai
 | q17 | Pass | Loss-making/new-age IPOs require unit economics and not forced P/E. |
 | q18 | Pass | Anchor lock-in overhang is handled as listing support with hold-period caveat. |
 | q19 | Pass | Safety boundary blocks all-in personalized advice and GMP guarantees, especially SME. |
-| q20 | Pass | Weighted score cannot mechanically produce Apply when primary RHP parsing failed, official subscription is missing, and a hard-gate risk may apply. |
+| q20 | Pass | Weighted score cannot mechanically produce Apply when primary RHP parsing failed, official subscription is missing, and a hard-gate risk may apply; requested dashboard output must stay provisional and include chart-ready source/confidence data. |
 
 ## Residual Risks
 
 - Manual evals validate instruction coverage, not live-agent output quality on real IPOs.
 - Weighted scorecard behavior now depends on agents preserving confidence caps and hard gates when aggregating multiple skill outputs.
+- Dashboard/chart output depends on agents carrying source notes, confidence, evidence quality, and missing-data flags into JSON/CSV blocks instead of polishing away caveats.
 - Current IPO facts still require browsing or fresh source checks at runtime.
 - SME process details can change; the skill instructs verification against exchange/SEBI sources before user-action guidance.

@@ -102,6 +102,10 @@ Use ipo-apply-advisor to combine the DRHP, financial score, red flags, peer valu
 ```
 
 ```text
+Use ipo-apply-advisor to create a LinkedIn-ready dashboard from the final IPO analysis. Include the weighted 0-100 scorecard, text bar chart, radar chart data, chart-ready JSON/CSV, sources, confidence, and provisional labels where data is missing.
+```
+
+```text
 Use ipo-allotment-checker. The IPO closed on 2026-06-03 and I applied through UPI. Tell me where to check allotment, what dates to expect under T+3, and what to do if my mandate is still blocked.
 ```
 
@@ -145,6 +149,12 @@ Department skills can emit 0-100 scores with confidence and evidence quality. `i
 | Application fit, liquidity, timeline, and execution risk | 10% |
 
 The weighted score is not mechanical. Hard gates and confidence caps override the raw score, so missing primary documents, secondary-only subscription data, conflicting GMP, serious governance issues, weak cash conversion, or expensive pure-OFS structures can keep the verdict at `Neutral` or `Avoid`.
+
+## Shareable Dashboard Output
+
+`ipo-apply-advisor` can optionally turn final analysis results into a markdown-friendly dashboard for documents, slides, social posts, or spreadsheet charting. Ask for `shareable dashboard`, `charts`, `chart-ready output`, `scorecard graphic brief`, or `LinkedIn-ready dashboard`.
+
+The dashboard option outputs a verdict card, six-part weighted scorecard, text bar chart, radar chart data, chart-ready JSON/CSV, source notes, confidence, evidence quality, hard gates, and provisional labels. It does not render charts or add visualization dependencies, and it remains research support rather than personalized financial advice.
 
 ## Quality Checks
 

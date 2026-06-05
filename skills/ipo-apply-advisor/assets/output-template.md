@@ -53,6 +53,96 @@ Score status: Final / Provisional because [missing data, conflicting sources, of
 
 Hard gates and confidence caps override the weighted score.
 
+## Optional Shareable Dashboard
+
+Include this section only when the user asks for a shareable dashboard, charts, chart-ready output, scorecard graphic brief, LinkedIn-ready dashboard, or similar output. Follow `references/dashboard-output.md`.
+
+### Dashboard Status
+
+| Field | Value |
+|---|---|
+| Dashboard status | Final / Provisional |
+| Score status | Final / Provisional |
+| Confidence | High / Medium / Low |
+| Evidence quality | Primary / Official fallback / Mixed / Secondary-only |
+| Do-not-overstate note | Missing data, source conflict, hard gate, or timestamp caveat |
+
+### Verdict Card
+
+| Field | Display |
+|---|---|
+| IPO |  |
+| Decision | Apply / Neutral / Avoid |
+| Final score | X/100 / Provisional |
+| Confidence | High / Medium / Low |
+| Best suited for | Listing gains / Long term / Both / Neither |
+| Main reason | One evidence-backed sentence |
+| Biggest risk | One evidence-backed sentence |
+| Data status | Final / Provisional with reason |
+
+### Weighted Score Dashboard
+
+| Department | Score | Weight | Contribution | Confidence | Evidence quality | Source note |
+|---|---:|---:|---:|---|---|---|
+| Financial quality | /100 or Unavailable | 25% | /25 or Provisional | High / Medium / Low | Primary / Mixed / Secondary-only |  |
+| Valuation / peer comparison | /100 or Unavailable | 20% | /20 or Provisional | High / Medium / Low | Primary / Mixed / Secondary-only |  |
+| Governance, red flags, issue structure | /100 or Unavailable | 20% | /20 or Provisional | High / Medium / Low | Primary / Mixed / Secondary-only |  |
+| Demand quality | /100 or Unavailable | 15% | /15 or Provisional | High / Medium / Low | Primary / Mixed / Secondary-only |  |
+| GMP / listing sentiment | /100 or Unavailable | 10% | /10 or Provisional | High / Medium / Low | Primary / Mixed / Secondary-only |  |
+| Application fit, liquidity, timeline risk | /100 or Unavailable | 10% | /10 or Provisional | High / Medium / Low | Primary / Mixed / Secondary-only |  |
+
+### Text Bar Chart
+
+```text
+Financial quality                  [----------] X/100  Confidence
+Valuation / peer comparison        [----------] X/100  Confidence
+Governance / issue structure       [----------] X/100  Confidence
+Demand quality                     [----------] X/100  Confidence
+GMP / listing sentiment            [----------] X/100  Confidence
+Application / liquidity / timeline [----------] X/100  Confidence
+```
+
+Use `[??????????] Unavailable` for missing departments. Do not score unavailable data as zero.
+
+### Radar Chart Data
+
+Provide valid JSON with actual scores or `null` for unavailable scores.
+
+```json
+{
+  "chart_type": "radar",
+  "scale": {"min": 0, "max": 100},
+  "series": []
+}
+```
+
+### Chart-Ready JSON
+
+Provide valid JSON with IPO context, decision, departments, hard gates, confidence caps, source notes, and `not_financial_advice` set to `true`.
+
+```json
+{
+  "ipo": {},
+  "decision": {},
+  "departments": [],
+  "sources": []
+}
+```
+
+### CSV Data Block
+
+```csv
+department,score,weight,weighted_contribution,confidence,evidence_quality,source_note
+```
+
+### Graphic Brief
+
+- Format:
+- Headline:
+- Primary visual:
+- Required badges:
+- Footnote:
+
 ## Auto-Avoid / Red-Flag Check
 
 State whether any hard gate fired. If yes, explain why the final decision remains Avoid even if GMP/subscription is positive.

@@ -1,6 +1,6 @@
 ---
 name: ipo-apply-advisor
-description: Use when advising whether to apply, avoid, or stay neutral on an Indian IPO using prior IPO skill outputs or fresh sources. Covers NSE/BSE mainboard and SME IPOs, listing-gain vs long-term framing, GMP/subscription caveats, category/cut-off guidance, and the mandatory final verdict block.
+description: Use when advising whether to apply, avoid, or stay neutral on an Indian IPO using prior IPO skill outputs or fresh sources. Covers NSE/BSE mainboard and SME IPOs, listing-gain vs long-term framing, GMP/subscription caveats, category/cut-off guidance, shareable dashboard/chart-ready scorecard output, and the mandatory final verdict block.
 ---
 
 # IPO Apply Advisor
@@ -35,6 +35,7 @@ Load references only as needed:
 - `skills/shared/references/ipo_scorecard_model.md` for 0-100 department scores, weights, confidence caps, and hard gates.
 - `references/category-and-process.md` for retail/sHNI/bHNI, SME, cut-off, T+3, ASBA/UPI, and July 2025 SME process rules.
 - `references/source-and-safety.md` for source hierarchy, caveats, and advice boundaries.
+- `references/dashboard-output.md` when the user asks for a shareable dashboard, charts, chart-ready output, scorecard graphic brief, LinkedIn-ready dashboard, or similar presentation-ready artifact.
 - `assets/output-template.md` for the required response shape.
 
 Also use shared references when useful:
@@ -55,7 +56,8 @@ Also use shared references when useful:
 6. Resolve contradictions conservatively. High GMP cannot offset weak fundamentals or hard red flags. Strong fundamentals with weak demand often means `Neutral` or wait for listing.
 7. Give practical category and capital guidance: Retail, sHNI, bHNI, SME individual, or not recommended. Calculate amount as `lot size x bid price x lots`; for cut-off retail examples use the upper band unless a different bid price is stated.
 8. Give cut-off price guidance. For book-built mainboard retail applications, default to cut-off only if the apply thesis survives upper-band valuation.
-9. End with the mandatory `## Verdict` table exactly as described in `assets/output-template.md`.
+9. If the user requests dashboard/chart output, add the optional shareable dashboard sections from `references/dashboard-output.md`. Keep them source-aware, confidence-aware, and provisional when evidence is missing or conflicted.
+10. End with the mandatory `## Verdict` table exactly as described in `assets/output-template.md`.
 
 ## Decision Rules
 

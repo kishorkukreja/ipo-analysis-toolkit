@@ -29,6 +29,25 @@ weighted_score =
 
 Do not average missing departments as zero. If a department is unavailable, either fill it from primary sources or mark the final score as provisional and cap confidence at Low or Medium.
 
+## Chart-Ready Department Handoff
+
+When a department skill output may be reused by `ipo-apply-advisor` for shareable dashboard, charts, scorecard graphic brief, or LinkedIn-ready output, include chart-ready fields alongside the normal handoff.
+
+Use the same 0-100 score scale and the same department names as the weighted model. Do not invent precision for unavailable data.
+
+```text
+dashboard_department: Financial quality / Valuation / Governance / Demand quality / GMP / Application fit
+dashboard_score: 0-100 or Unavailable
+dashboard_weight: 25 / 20 / 20 / 15 / 10 / 10
+dashboard_confidence: High / Medium / Low
+dashboard_evidence_quality: Primary / Official fallback / Mixed / Secondary-only
+dashboard_source_note: one-line source, timestamp, or caveat
+dashboard_missing_data: None or list
+dashboard_hard_gate: None or one-line hard-gate summary
+```
+
+For chart data, unavailable scores should be represented as `null` in JSON or blank in CSV, not `0`.
+
 ## Verdict Bands
 
 | Final score | Base verdict |
@@ -67,4 +86,15 @@ evidence_quality: Primary / Official fallback / Mixed / Secondary-only
 hard_gates: None or list
 confidence_caps: None or list
 missing_data: None or list
+```
+
+Optional chart-ready handoff fields:
+
+```text
+dashboard_department: canonical department name
+dashboard_score: 0-100 or Unavailable
+dashboard_weight: department weight
+dashboard_confidence: High / Medium / Low
+dashboard_evidence_quality: Primary / Official fallback / Mixed / Secondary-only
+dashboard_source_note: source/timestamp/caveat
 ```
