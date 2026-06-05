@@ -73,7 +73,7 @@ Check the issue schedule and market holidays.
 
 | Field | Value |
 |---|---|
-| department_score | X/100 / Not scored |
+| department_score | X/100 / Unavailable |
 | score_label | Feasible / Caution / Not feasible / Unknown |
 | confidence | High / Medium / Low |
 | evidence_quality | Official / Mixed / Secondary-only |

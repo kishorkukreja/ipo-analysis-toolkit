@@ -43,7 +43,7 @@ Do not paste these identifiers here. Enter them only on the official HTTPS regis
 
 | Field | Value |
 |---|---|
-| department_score | X/100 / Not scored |
+| department_score | X/100 / Unavailable |
 | score_label | Feasible / Caution / Not feasible / Unknown |
 | confidence | High / Medium / Low |
 | evidence_quality | Official registrar/exchange / Official fallback / Mixed / Secondary-only |
