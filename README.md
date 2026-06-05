@@ -2,11 +2,20 @@
 
 Standalone skills plugin for Indian IPO research workflows across NSE/BSE mainboard, NSE Emerge, and BSE SME issues.
 
-This package is separate from `finance-trading-skills`, so users can install general trading skills without IPO workflows, or install this plugin independently when they need IPO calendar, DRHP, financials, GMP, subscription, application, allotment, listing-day, and scenario analysis.
+Use this toolkit when you need IPO calendar, DRHP, financials, GMP, subscription, application, allotment, listing-day, and scenario analysis for Indian public issues.
 
 ## Install
 
-Copy or symlink this plugin into your agent or Codex skills/plugin location according to your local setup. The important runtime folders are:
+Clone the repository:
+
+```powershell
+git clone https://github.com/kishorkukreja/ipo-analysis-toolkit.git
+cd ipo-analysis-toolkit
+```
+
+Install it as a local skills/plugin bundle in your agent or Codex setup. Keep the repository layout intact because several skills use shared references from `skills/shared/references`.
+
+The runtime files are:
 
 ```text
 skills/
@@ -14,6 +23,28 @@ docs/
 AGENTS.md
 CLAUDE.md
 ```
+
+Recommended local install pattern:
+
+```powershell
+$repo = "C:\path\to\ipo-analysis-toolkit"
+$plugins = "$HOME\.codex\plugins"
+New-Item -ItemType Directory -Force $plugins
+New-Item -ItemType Junction -Path "$plugins\ipo-analysis-toolkit" -Target $repo
+```
+
+If your agent supports a configured skills/plugin path, point it at the cloned repository root, not at one individual skill folder.
+
+Manual fallback:
+
+```powershell
+$repo = "C:\path\to\ipo-analysis-toolkit"
+$skillsRoot = "$HOME\.codex\skills"
+New-Item -ItemType Directory -Force $skillsRoot
+Copy-Item "$repo\skills\*" $skillsRoot -Recurse -Force
+```
+
+The fallback is less ideal because the skills were authored as one bundle with shared references. If you use it, keep `skills/shared/references` available alongside the IPO skill folders.
 
 The `evals/` folder is included as quality evidence and regression material. It is not required at runtime, but it is useful when changing a skill.
 
