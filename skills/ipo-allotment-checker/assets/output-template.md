@@ -39,6 +39,18 @@ Do not paste these identifiers here. Enter them only on the official HTTPS regis
 
 [Warn against unofficial PAN-collecting pages, calls/messages claiming guaranteed allotment or paid help, and sharing PAN/bank/demat details in chat.]
 
+## Advisor Handoff
+
+| Field | Value |
+|---|---|
+| department_score | X/100 / Not scored |
+| score_label | Feasible / Caution / Not feasible / Unknown |
+| confidence | High / Medium / Low |
+| evidence_quality | Official registrar/exchange / Official fallback / Mixed / Secondary-only |
+| hard_gates | None / registrar unknown / unsafe status source / unresolved mandate issue |
+| confidence_caps | None / missing registrar / pre-allotment data not live / unofficial status source |
+| missing_data | None / list |
+
 ## Sources
 
 | Source | Link | Use |

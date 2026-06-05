@@ -31,7 +31,7 @@ Critical failures: 0
 | ipo-gmp-tracker-015 | Pass | Skill uses T+3 working days and defines T as close date. |
 | ipo-gmp-tracker-016 | Pass | Skill treats T+6 as historical except for older issue-specific documents. |
 | ipo-gmp-tracker-017 | Pass | Skill requires SME issue open date and July 2025 process caution. |
-| ipo-gmp-tracker-018 | Pass | Missing-data behavior says not to compute or invent GMP. |
+| ipo-gmp-tracker-018 | Pass | Zero-vs-premium GMP conflict requires source rows, range output, reliability cap, and provisional advisor handoff. |
 | ipo-gmp-tracker-019 | Pass | Output template includes required sections. |
 | ipo-gmp-tracker-020 | Pass | Promotional/manipulation red flags cap reliability at Low. |
 

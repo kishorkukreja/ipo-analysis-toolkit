@@ -103,9 +103,12 @@
 
 | Field | Value |
 |---|---|
+| department_score | [number] |
+| score_label | [Strong / Moderate / Weak / Avoid-level financial risk] |
 | financial_score | [number] |
 | financial_label | [Strong / Moderate / Weak / Avoid-level financial risk] |
 | confidence | [High / Medium / Low] |
+| evidence_quality | [Primary / Official fallback / Mixed / Secondary-only] |
 | ipo_classification | [Mainboard / NSE Emerge / BSE SME] |
 | sector_model | [ ] |
 | cash_conversion_quality | [Strong / Mixed / Weak] |
