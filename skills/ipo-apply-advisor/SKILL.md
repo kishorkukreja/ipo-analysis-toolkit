@@ -32,6 +32,7 @@ When a dependent output is missing, fill the gap inline from primary sources if 
 Load references only as needed:
 
 - `references/decision-model.md` for scoring, auto-avoid gates, and contradiction handling.
+- `skills/shared/references/ipo_scorecard_model.md` for 0-100 department scores, weights, confidence caps, and hard gates.
 - `references/category-and-process.md` for retail/sHNI/bHNI, SME, cut-off, T+3, ASBA/UPI, and July 2025 SME process rules.
 - `references/source-and-safety.md` for source hierarchy, caveats, and advice boundaries.
 - `assets/output-template.md` for the required response shape.
@@ -50,7 +51,7 @@ Also use shared references when useful:
    - Listing-gain view: GMP level/trend, QIB/NII/retail demand quality, anchors, market mood, issue size/float, valuation overhang, and SME liquidity.
    - Long-term subscribe view: business quality, financials, cash conversion, valuation, governance, use of proceeds, moat, and post-listing supply overhang.
 4. Run auto-avoid gates before weighted scoring. Severe governance, cash-conversion, auditor, RPT, pledge, restatement, regulatory, or SME manipulation patterns can force `Avoid` regardless of GMP.
-5. Score only after gates: financial quality /25, valuation /20, governance and issue structure /20, demand quality /15, GMP/listing sentiment /10, market/liquidity adjustment /10.
+5. Score only after gates using 0-100 department scores and the shared weighted model: financial quality 25%, valuation 20%, governance/issue structure 20%, demand quality 15%, GMP/listing sentiment 10%, and application/liquidity/timeline risk 10%.
 6. Resolve contradictions conservatively. High GMP cannot offset weak fundamentals or hard red flags. Strong fundamentals with weak demand often means `Neutral` or wait for listing.
 7. Give practical category and capital guidance: Retail, sHNI, bHNI, SME individual, or not recommended. Calculate amount as `lot size x bid price x lots`; for cut-off retail examples use the upper band unless a different bid price is stated.
 8. Give cut-off price guidance. For book-built mainboard retail applications, default to cut-off only if the apply thesis survives upper-band valuation.
@@ -59,8 +60,10 @@ Also use shared references when useful:
 ## Decision Rules
 
 - `Apply`: no auto-avoid trigger, acceptable valuation, clean or manageable governance, and either strong long-term case or strong listing setup with risk clearly bounded.
-- `Neutral`: mixed evidence, missing primary data, strong listing but weak long-term quality, strong fundamentals but weak demand, or unresolved contradictions.
+- `Neutral`: weighted score 55-74, mixed evidence, missing primary data, conflicting market signals, early subscription data, strong listing but weak long-term quality, strong fundamentals but weak demand, or unresolved contradictions.
 - `Avoid`: auto-avoid trigger, poor cash conversion, material governance concern, expensive weak business, retail/NII hype with weak QIB, or SME risk stack dominated by GMP.
+
+Do not issue `Apply` from a raw weighted score when a hard gate fires or when confidence is Low because primary documents, official subscription data, or market-signal timestamps are missing.
 
 For SME IPOs, lower confidence by default, include liquidity/exit risk, verify issue open date, and apply July 2025 revised process guidance for issues opening on or after 2025-07-01.
 

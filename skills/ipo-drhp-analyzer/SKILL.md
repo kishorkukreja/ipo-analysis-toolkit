@@ -31,6 +31,7 @@ Be document-grounded. Analyze the official DRHP, RHP, prospectus, abridged prosp
    - Official: SEBI public issue pages, NSE/BSE offer-document pages, official exchange SME pages, issuer site, BRLM site, registrar or public notices.
    - Fallback: abridged prospectus, AV disclosure, exchange metadata.
    - Last resort: reputable secondary summaries; label confidence `Low`.
+   If an official PDF or SEBI page is found but cannot be fetched or parsed, run the retrieval failure fallback chain in `references/source-and-fallbacks.md` before concluding that the document is unavailable.
 5. Extract only the sections needed for retail due diligence:
    - Source metadata and data freshness.
    - Business snapshot.
@@ -61,5 +62,6 @@ Be document-grounded. Analyze the official DRHP, RHP, prospectus, abridged prosp
 ## Missing Data Behavior
 
 - If the PDF is inaccessible or table extraction is unreliable, use official exchange metadata, abridged prospectus, AV disclosure, issuer/BRLM pages, or ask for the exact document URL.
+- List attempted official URLs and failure modes before relying on secondary summaries.
 - If only secondary sources are available, state `Confidence: Low`, list missing official fields, and avoid firm conclusions.
 - If the user asks for a decision, provide document risks and suggest running the apply-advisor workflow rather than giving personalized investment advice.

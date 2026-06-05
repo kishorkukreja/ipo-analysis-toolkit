@@ -54,6 +54,14 @@ implied_listing_value_per_lot = implied_listing_price * lot_size
 
 If sources disagree materially, show a GMP range and implied listing range instead of one false-precision number. If GMP is zero, say the grey market is not pricing a premium. If GMP is negative, compute the implied discount and loss per lot.
 
+Treat GMP as conflicting when reputable sources differ by more than the higher of `Rs 2` per share or `5%` of the issue price, or when one source says zero/no activity while another shows a material premium. In that case:
+
+- Add a `Conflict flag: Yes`.
+- Show each source separately with timestamp/fetch time.
+- Use a range, not a single GMP.
+- Cap GMP reliability at Medium, or Low when timestamps are missing or the IPO is SME.
+- Tell `ipo-apply-advisor` to treat the GMP score as provisional.
+
 ## Trend And Reliability
 
 Build a day-wise trend when data exists: pre-open, Day 1, Day 2, final day, post-close, allotment day, final 24-48 hours, and listing morning. Classify as rising steadily, rising sharply, flat positive, flat zero, falling from high, volatile, divergent, or unknown.
@@ -82,6 +90,7 @@ Always include:
 
 - IPO snapshot with classification, price used, lot size, current GMP, GMP percent, implied listing price, implied per-lot gain/loss, listing timeline, and data freshness.
 - Source cross-check table with URLs and timestamps.
+- Conflict flag and source-spread explanation when GMP sources disagree materially.
 - Trend interpretation.
 - Reliability score and label.
 - Separate facts, interpretation, and retail investor implications.

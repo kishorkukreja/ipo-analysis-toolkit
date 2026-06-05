@@ -29,6 +29,7 @@
 | Indicative quantity / depth |  |
 | Cancelled orders |  |
 | Signal label | `[Strong / Moderate / Weak / Unreliable]` |
+| Application/liquidity/timeline score | `X/100` |
 | Signal caveat |  |
 
 ## Input Scorecard
@@ -82,5 +83,17 @@
 | Stop-loss |  |
 | Listing signal | `[Strong / Moderate / Weak / Unreliable]` |
 | Main risk | `[Liquidity / valuation / weak QIB / market selloff / GMP mismatch / missing live data]` |
+
+## Advisor Handoff
+
+| Field | Value |
+|---|---|
+| department_score | X/100 |
+| score_label | Positive / Neutral / Negative / Unreliable |
+| confidence | High / Medium / Low |
+| evidence_quality | Live exchange / Official fallback / Mixed / Secondary-only |
+| hard_gates | None / list |
+| confidence_caps | None / missing live data / thin liquidity / SME |
+| missing_data | None / list |
 
 This is a listing-day decision framework, not personalized investment advice.

@@ -41,6 +41,7 @@
 
 ## Improvements Made During Review
 
+- Added official RHP/PDF retrieval failure fallback chain: SEBI page, issuer PDF, exchange page, abridged prospectus, BRLM/registrar, then labeled secondary sources.
 - Tightened `SKILL.md` to state T+3 as current default and T+6 as historical unless issue-specific evidence applies.
 - Added SME issue-open-date branch and post-2025-07-01 checks to prevent stale SME mechanics.
 - Added explicit source confidence labels and secondary-source restrictions.

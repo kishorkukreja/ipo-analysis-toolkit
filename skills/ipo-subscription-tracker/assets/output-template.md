@@ -11,6 +11,7 @@
 | Lot size | X shares / Not verified |
 | Minimum application amount | Rs X / Not verified |
 | Data status | Live/intraday / Near close / Final exchange update / Post basis-of-allotment / Not verified |
+| IPO stage | Pre-open / Day 1 / Middle days / Final day / Post-close pre-allotment / Post-allotment pre-listing / Listed |
 | Data fetched | YYYY-MM-DD HH:MM IST |
 | Source timestamp | YYYY-MM-DD HH:MM IST / Not shown |
 | Timeline note | T+3 working days from issue close for current public issues |
@@ -81,9 +82,12 @@
 
 | Field | Value |
 |---|---|
+| Demand quality score | X/100 |
 | Demand quality | Strong / Mixed / Weak |
 | Allotment odds | High / Moderate / Low / Very low / Long-shot |
 | Data confidence | High / Medium / Low |
+| Official data missing | Yes / No |
+| Early-stage caveat applied | Yes / No |
 | Main driver | QIB / Retail / NII / Anchor / Mixed / Unknown |
 
 ## Source Reconciliation
@@ -101,9 +105,22 @@
 - Anchor implication:
 - Timeline implication:
 
+## Advisor Handoff
+
+| Field | Value |
+|---|---|
+| department_score | X/100 |
+| score_label | Strong / Mixed / Weak |
+| confidence | High / Medium / Low |
+| evidence_quality | Official exchange / Official fallback / Mixed / Secondary-only |
+| hard_gates | None / weak QIB with hype / other |
+| confidence_caps | None / early-stage / secondary-only / timestamp missing |
+| missing_data | None / list |
+
 ## Caveats and Missing Data
 
 - Subscription is a demand signal, not a complete investment decision.
+- Day 1/opening-day subscription is preliminary; do not over-weight retail/NII before final-day QIB behavior is visible.
 - GMP, if mentioned, is informal and unregulated and must stay separate from official subscription.
 - Live data can change sharply near close.
 - No allotment, listing gain, or return is guaranteed.

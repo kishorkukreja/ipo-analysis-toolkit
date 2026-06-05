@@ -10,6 +10,7 @@
 | Category | [Retail / Individual Investor / sNII / bNII / employee / shareholder / policyholder / unknown] |
 | Route | [Broker UPI ASBA / Bank ASBA / unknown] |
 | Source status | [official data available / missing fields listed] |
+| Application fit score | [X/100 / not scored] |
 
 ## Facts
 
@@ -67,3 +68,15 @@ Check the issue schedule and market holidays.
 - Do not share UPI PIN, OTP, demat login, broker PIN, bank password, or full account credentials.
 - Use the applicant's own UPI ID and bank account.
 - Do not treat this as an apply/avoid recommendation or a guarantee of allotment/listing gains.
+
+## Advisor Handoff
+
+| Field | Value |
+|---|---|
+| department_score | X/100 / Not scored |
+| score_label | Feasible / Caution / Not feasible / Unknown |
+| confidence | High / Medium / Low |
+| evidence_quality | Official / Mixed / Secondary-only |
+| hard_gates | None / category infeasible / payment route infeasible |
+| confidence_caps | None / missing issue rules / SME process not verified |
+| missing_data | None / list |

@@ -12,6 +12,8 @@
 | Issue price used | INR X upper band / fixed price / Not found |
 | Lot size | X shares / Not found |
 | Current GMP | INR X per share / Not available |
+| GMP range | INR X-INR Y / Not applicable |
+| Conflict flag | Yes / No |
 | GMP % | X.X% / Not calculable |
 | Implied listing price | INR X / Range / Not calculable |
 | Implied gain/loss per lot | INR X / Not calculable |
@@ -58,8 +60,30 @@ Trend classification: Rising steadily / Rising sharply / Flat positive / Flat ze
 |---|---|
 | Score | X/100 |
 | Label | High / Medium / Low / Very Low |
+| Department score for advisor | X/100 |
 | Main drivers | Source agreement, freshness, trend, subscription support, market context |
 | Caps applied | One source / SME one-source / stale data / weak QIB / source divergence / manipulation risk / None |
+
+## Conflict Handling
+
+| Field | Value |
+|---|---|
+| Source spread | INR X or X% of issue price |
+| Zero-vs-premium conflict | Yes / No |
+| Range used for implied listing | Yes / No |
+| Advisor handoff | Treat GMP score as provisional / Usable with caveats / Not usable |
+
+## Advisor Handoff
+
+| Field | Value |
+|---|---|
+| department_score | X/100 |
+| score_label | Strong / Noisy / Weak / Not usable |
+| confidence | High / Medium / Low |
+| evidence_quality | Primary for IPO basics plus GMP secondary / Mixed / Secondary-only |
+| hard_gates | None / manipulation or promotional warning |
+| confidence_caps | None / list |
+| missing_data | None / list |
 
 ## Facts
 

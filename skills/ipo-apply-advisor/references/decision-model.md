@@ -40,7 +40,7 @@ If a user explicitly asks for a speculative listing-gain-only view, keep the cor
 
 ## Weighted Score
 
-Use this after gates:
+Use this after gates. Prefer department scores on a 0-100 scale and apply the shared model in `skills/shared/references/ipo_scorecard_model.md`.
 
 | Component | Weight | Strong signal |
 |---|---:|---|
@@ -51,15 +51,15 @@ Use this after gates:
 | GMP/listing sentiment | 10 | stable/rising, corroborated, never official |
 | Market/liquidity adjustment | 10 | supportive market, adequate float, mainboard depth, manageable SME liquidity |
 
-Score interpretation:
+Weighted score interpretation:
 
 | Score | Base interpretation |
 |---:|---|
-| 80-100 | Apply if no severe unresolved caveat |
-| 65-79 | Apply or Neutral depending on contradictions and confidence |
-| 50-64 | Neutral, horizon-specific only |
-| 35-49 | Avoid unless short-term demand is exceptional and risks are accepted |
-| 0-34 | Avoid |
+| 75-100 | Apply zone only if no hard gate exists and confidence is not Low |
+| 55-74 | Neutral zone or wait-for-listing zone |
+| 0-54 | Avoid zone |
+
+The total is not a mechanical average. Apply hard gates first, then confidence caps, then the weighted score.
 
 For SME IPOs, subtract 5-15 points for liquidity, lot-size, and disclosure risk. Cap confidence at Medium unless audited history, cash conversion, merchant banker quality, and institutional/anchor demand are strong. If valuation is above peer median and GMP is the main positive, cap final decision at Neutral.
 
@@ -104,6 +104,8 @@ Cap confidence at Medium or Low when:
 - IPO is SME and disclosures/demand quality are thin.
 - GMP is the main positive signal.
 - Subscription is early or timestamp missing.
+- GMP sources conflict materially or one source shows zero/no activity while another shows a material premium.
+- Official NSE/BSE subscription data is missing and only secondary subscription data is available.
 - Peer set is weak or old.
 - Primary offer document is missing.
 - Major contradictions remain unresolved.

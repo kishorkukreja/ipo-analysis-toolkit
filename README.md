@@ -131,6 +131,21 @@ Analyze this IPO end to end for a retail investor. Start with DRHP extraction, t
 - Mainboard and SME IPOs require different risk, liquidity, lot-size, process, and exit-friction framing.
 - Prefer official sources first: SEBI, NSE, BSE, issuer, BRLM, registrar, and offer documents. Use secondary sources only with caveats.
 
+## Scorecard Model
+
+Department skills can emit 0-100 scores with confidence and evidence quality. `ipo-apply-advisor` aggregates them through a weighted model:
+
+| Department | Weight |
+|---|---:|
+| Financial quality | 25% |
+| Valuation / peer comparison | 20% |
+| Governance, red flags, and issue structure | 20% |
+| Demand quality: subscription, anchors, category mix | 15% |
+| GMP / listing sentiment / market mood | 10% |
+| Application fit, liquidity, timeline, and execution risk | 10% |
+
+The weighted score is not mechanical. Hard gates and confidence caps override the raw score, so missing primary documents, secondary-only subscription data, conflicting GMP, serious governance issues, weak cash conversion, or expensive pure-OFS structures can keep the verdict at `Neutral` or `Avoid`.
+
 ## Quality Checks
 
 Each skill includes:

@@ -11,7 +11,8 @@
 | Suggested stance from red-flag lens | Proceed / Caution / Strong caution / Avoid |
 | Confidence | High / Medium / Low |
 | Auto-reject triggered | Yes / No |
-| Score |  |
+| Governance / issue-structure score | X/100 |
+| Evidence quality | Primary / Official fallback / Mixed / Secondary-only |
 | Data gaps |  |
 
 ## Critical Flags
@@ -58,3 +59,14 @@
 - Action:
 - Safety note: This is a red-flag scan for Indian IPO research, not personalized investment advice. GMP, subscription, and social sentiment are not official risk controls and cannot override document-backed red flags.
 
+## Advisor Handoff
+
+| Field | Value |
+|---|---|
+| department_score | X/100 |
+| score_label | Low / Moderate / High / Severe red-flag risk |
+| confidence | High / Medium / Low |
+| evidence_quality | Primary / Official fallback / Mixed / Secondary-only |
+| hard_gates | None / list |
+| confidence_caps | None / list |
+| missing_data | None / list |

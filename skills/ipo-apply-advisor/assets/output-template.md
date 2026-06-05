@@ -13,6 +13,7 @@
 | Best suited for | Listing gains / Long term / Both / Neither |
 | Main reason | One sentence |
 | Biggest risk | One sentence |
+| Final score | X/100 / Provisional |
 | Confidence | High / Medium / Low |
 
 ## Issue Context
@@ -38,15 +39,19 @@ Cover business quality, financials, cash conversion, valuation, governance, use 
 
 ## Scorecard
 
-| Component | Score | Signal |
-|---|---:|---|
-| Financial quality | /25 | Strong / Moderate / Weak |
-| Valuation | /20 | Cheap / Fair / Expensive |
-| Governance and issue structure | /20 | Clean / Mixed / Weak |
-| Demand quality | /15 | Strong / Mixed / Weak |
-| GMP/listing sentiment | /10 | Strong / Noisy / Weak |
-| Market/liquidity adjustment | /10 | Positive / Neutral / Negative |
-| Total | /100 | Apply / Neutral / Avoid zone |
+| Component | Department score | Weight | Weighted contribution | Confidence / cap |
+|---|---:|---:|---:|---|
+| Financial quality | /100 | 25% | /25 | High / Medium / Low |
+| Valuation / peer comparison | /100 | 20% | /20 | High / Medium / Low |
+| Governance, red flags, issue structure | /100 | 20% | /20 | High / Medium / Low |
+| Demand quality | /100 | 15% | /15 | High / Medium / Low |
+| GMP / listing sentiment | /100 | 10% | /10 | High / Medium / Low |
+| Application fit, liquidity, timeline risk | /100 | 10% | /10 | High / Medium / Low |
+| Total |  | 100% | /100 | Apply / Neutral / Avoid zone |
+
+Score status: Final / Provisional because [missing data, conflicting sources, official data unavailable].
+
+Hard gates and confidence caps override the weighted score.
 
 ## Auto-Avoid / Red-Flag Check
 
@@ -55,6 +60,8 @@ State whether any hard gate fired. If yes, explain why the final decision remain
 ## Contradictions
 
 List major contradictions such as high GMP with weak QIB, strong fundamentals with expensive valuation, or SME hype with poor cash conversion.
+
+Include market-signal conflicts such as zero GMP from one source and material premium from another, or secondary-only subscription without official category data.
 
 ## Category And Capital Required
 

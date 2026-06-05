@@ -8,6 +8,7 @@ An answer passes when it:
 
 - Follows the workflow in `skills/ipo-drhp-analyzer/SKILL.md`.
 - Uses the source hierarchy in `references/source-and-fallbacks.md`.
+- Applies the retrieval failure fallback chain when a SEBI page or official PDF is found but cannot be opened or parsed.
 - Uses the required output sections in `assets/output-template.md` when a full analyzer output is requested.
 - Identifies mainboard, NSE Emerge, BSE SME, or unknown classification.
 - States issue open date when timeline or SME process treatment depends on it.
@@ -34,6 +35,7 @@ Any of these is an automatic fail:
 - Treats GMP as official, regulated, or sufficient for guaranteed listing gains.
 - Gives guaranteed allotment, guaranteed returns, or personalized investment instructions.
 - Uses secondary summaries as if they were official offer-document evidence.
+- Fails to document failed official URL attempts before relying on secondary summaries for RHP/DRHP facts.
 - Invents PDF contents, final issue price, objects amounts, litigation status, or financial figures.
 - Says OFS proceeds go to the issuer's growth objects.
 - Fails to ask for or search an official document URL when required source data is missing.
@@ -61,4 +63,3 @@ For each question:
 2. Compare the expected behavior to the skill instructions and references.
 3. Mark pass only if the skill instructions would force the answer to satisfy all critical checks.
 4. If a failure is found, update the skill/reference/template and rerun the affected case.
-

@@ -22,6 +22,7 @@ Use this skill when the user asks about Indian IPO subscription status, category
 2. Classify the issue as mainboard, NSE SME/Emerge, or BSE SME before interpreting the data. If classification is unknown and cannot be verified, say it is a required lookup.
 3. For live or current IPO data, browse or fetch current sources. Prefer official NSE/BSE issue pages, exchange filings, anchor allotment announcements, and basis-of-allotment documents. Use Chittorgarh, InvestorGain, IPOWatch, broker pages, or media only as labeled secondary sources.
 4. Capture freshness in IST: data fetched time, source timestamp when available, and status such as live/intraday, near close, final exchange update, or post basis-of-allotment.
+   Also identify the IPO stage: pre-open, Day 1/opening day, middle days, final day, post-close/pre-allotment, post-allotment/pre-listing, or listed.
 5. Normalize category labels into QIB, NII/HNI, sHNI/sNII, bHNI/bNII, Retail/RII, Employee, Shareholder/Policyholder/Other, and Total.
 6. Keep the anchor book separate from public-window QIB subscription unless a source explicitly explains that it includes anchor allocation.
 7. Reconcile official sources before aggregators. If NSE, BSE, and aggregator numbers conflict, show the discrepancy, prefer the latest official timestamp, and do not call the data final unless final exchange or allotment documents support it.
@@ -32,6 +33,7 @@ Use this skill when the user asks about Indian IPO subscription status, category
 ## Interpretation Rules
 
 - QIB demand is the cleanest subscription quality signal, especially final-day QIB demand.
+- Day 1 or opening-day subscription is preliminary. Do not over-weight retail or NII strength on Day 1 because QIB demand often builds later in the offer window.
 - Retail subscription mainly informs public enthusiasm and allotment odds; it is weak as a standalone quality signal.
 - NII/HNI demand can be leverage-driven. Treat NII above 50x as likely hot money and NII above 100x as a poor standalone quality signal.
 - Strong anchor participation is useful only when quality is broad and credible. Score investor type, concentration, domestic MF breadth, and obscure-entity risk.
@@ -61,6 +63,7 @@ For every SME IPO, add a stricter risk layer:
 - If no live data can be verified, provide the exact source needed: exchange issue page, exchange announcement, RHP/prospectus, registrar page, or aggregator link.
 - Do not invent subscription multiples, anchor names, issue dates, lot size, or allotment probability.
 - If only secondary data is available, label confidence as Medium or Low and name the missing official source.
+- If only secondary subscription data is available, add an `Official data missing` flag and cap demand confidence at Medium, or Low when timestamps/category splits are missing.
 - If timestamps are missing, state the fetch time and say the source did not expose its own timestamp.
 
 ## Required Output
@@ -78,5 +81,15 @@ Follow `skills/ipo-subscription-tracker/assets/output-template.md`. Always inclu
 - Source Reconciliation
 - Investor Takeaway
 - Caveats and Missing Data
+
+For open IPOs, include stage-aware interpretation:
+
+- Pre-open: no subscription signal yet.
+- Day 1/opening day: preliminary only; avoid strong demand-quality claims unless QIB/anchor evidence is unusually clear.
+- Middle days: trend is forming but not final.
+- Final day: still distinguish intraday from final exchange update.
+- Post-close/pre-allotment: use final category data if available; do not estimate allotment from stale intraday data.
+- Post-allotment/pre-listing: subscription is historical; focus on allotment and listing-day setup.
+- Listed: do not present IPO subscription as current application guidance.
 
 End with demand quality, allotment odds, data confidence, and caveats. Avoid guaranteed allotment, guaranteed listing gains, or personalized financial advice.

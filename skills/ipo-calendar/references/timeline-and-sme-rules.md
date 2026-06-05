@@ -30,6 +30,20 @@ Typical T+3 sequence:
 | Demat credit | Expected around T+2 |
 | Listing | Expected around T+3 |
 
+## IPO Stage Labels
+
+Use these labels consistently across calendar, subscription, application, allotment, listing-day, and apply-advisor outputs:
+
+| Stage | Meaning | Main caveat |
+|---|---|---|
+| Pre-open | Issue terms known, bidding not open | No subscription signal yet |
+| Day 1 / opening day | First bidding day | Retail/NII can move early; QIB often builds later |
+| Middle days | Open but not final day | Trend is forming, not final |
+| Final day | Last bidding day | Distinguish intraday from final exchange data |
+| Post-close / pre-allotment | Bidding closed, basis pending | Use final data when available; allotment still unconfirmed |
+| Post-allotment / pre-listing | Allotment done, listing pending | Focus on demat/refund/listing setup |
+| Listed | Trading started | IPO application/allotment guidance is historical |
+
 ## SME Classification
 
 Always classify SME IPOs as NSE Emerge or BSE SME when possible. SME IPOs need stronger caveats because lot values are higher, liquidity can be lower, data may be more fragmented, and market makers are part of the structure.

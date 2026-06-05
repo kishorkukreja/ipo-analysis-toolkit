@@ -9,6 +9,7 @@
 | Financial score | [score]/100 |
 | Financial score label | [Strong / Moderate / Weak / Avoid-level financial risk] |
 | Confidence | [High / Medium / Low] |
+| Evidence quality | [Primary / Official fallback / Mixed / Secondary-only] |
 | Sector model | [Generic / Manufacturing / Retail / Infra-EPC / Bank-NBFC / SaaS / Other] |
 | SME adjustment | [Yes / No / Not applicable] |
 | Score cap applied | [No / Yes - reason] |
@@ -114,3 +115,6 @@
 | loss_making | [Yes / No] |
 | sme_adjustment_applied | [Yes / No / Not applicable] |
 | critical_financial_red_flags | [None / list] |
+| hard_gates | [None / list] |
+| confidence_caps | [None / list] |
+| missing_data | [None / list] |

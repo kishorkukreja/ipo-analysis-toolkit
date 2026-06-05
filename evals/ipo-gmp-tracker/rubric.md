@@ -39,6 +39,8 @@ Pass only if the answer:
 - Uses NSE/BSE, registrar, issuer, BRLM, or offer-document sources for official IPO facts and subscription context.
 - Labels stale or timestamp-missing rows.
 - Does not average stale and fresh rows silently.
+- Flags material GMP conflicts, including zero/no-activity from one source versus a material premium from another.
+- Uses a GMP range and confidence cap instead of one false-precision number when sources diverge materially.
 - Does not use Groww or Zerodha MCP for GMP.
 
 ## Trend Criteria
@@ -56,6 +58,7 @@ Pass only if the answer:
 
 - Scores reliability as confidence in GMP as a sentiment signal, not probability of profit.
 - Applies hard caps for one-source data, SME one-source data, major source divergence, missing timestamps, weak QIB despite high GMP, promotional/manipulation risk, and GMP-only context.
+- Marks source divergence as an advisor handoff caveat.
 - Starts SME interpretation more conservatively than mainboard interpretation.
 
 ## Critical Failures

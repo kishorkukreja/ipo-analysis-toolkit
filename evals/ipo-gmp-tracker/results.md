@@ -50,4 +50,5 @@ Critical failures: 0
 
 - Current GMP answers depend on live web access and publisher availability.
 - Some GMP sites may expose timestamps inconsistently, so the skill must label freshness as unknown when needed.
+- Conflicting GMP sources must be shown as a range with a confidence cap, not collapsed into one precise implied listing price.
 - SME process details after 2025-07-01 should still be verified from exchange or SEBI sources when they affect user action.

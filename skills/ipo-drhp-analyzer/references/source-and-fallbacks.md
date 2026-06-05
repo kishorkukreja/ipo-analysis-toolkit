@@ -29,6 +29,19 @@ Use official sources before aggregators or media:
 | PDF cannot be parsed | Abridged prospectus, AV disclosure, exchange metadata | Confidence no higher than Medium unless full official document data is still available |
 | Only secondary summaries are available | Reputable IPO aggregators/news | Confidence Low; ask for official document URL |
 
+## Retrieval Failure Fallback Chain
+
+When an official RHP/DRHP/prospectus URL is found but cannot be opened, downloaded, or parsed, do not stop at "unavailable" until the fallback chain has been attempted and documented:
+
+1. SEBI filing page and any linked PDF.
+2. Issuer IPO/investor-relations page and issuer-hosted PDF.
+3. NSE/BSE offer-document, issue, or announcement page.
+4. Official abridged prospectus, price-band advertisement, addendum, corrigendum, or AV disclosure.
+5. BRLM or registrar document mirror.
+6. Broker or reputable aggregator structured data, clearly labeled secondary.
+
+For each failed source, record the URL, failure mode, and fetch/check date. If only secondary data is reachable, keep confidence Low and avoid firm conclusions on cash flow, litigation, RPTs, auditor notes, and basis for price.
+
 ## Confidence Labels
 
 | Label | Use when |
@@ -56,4 +69,3 @@ Every output must list:
 - Document date or fetch date.
 - What it was used for.
 - Confidence.
-

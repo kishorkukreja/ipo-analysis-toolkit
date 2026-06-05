@@ -39,6 +39,8 @@
 ## Improvements Made
 
 - Added explicit source hierarchy and reconciliation behavior for conflicting NSE/BSE/aggregator data.
+- Added IPO-stage labels and Day 1/opening-day caveats so early retail/NII demand is not over-weighted before final-day QIB behavior is visible.
+- Added official-data-missing confidence caps for secondary-only subscription data.
 - Added exact and proxy retail allotment formulas with method labeling.
 - Added anchor quality score, anchor red flags, and lock-in note.
 - Added SME-specific interpretation and July 2025 process verification rules.

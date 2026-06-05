@@ -9,6 +9,8 @@ Each answer is evaluated against the skill instructions, reference files, and ou
 - Prioritizes official NSE/BSE, exchange announcements, basis-of-allotment documents, registrar data, and offer documents before aggregators.
 - Labels Chittorgarh, InvestorGain, IPOWatch, broker pages, media, and GMP sources as secondary where used.
 - Includes data freshness in IST: fetch timestamp, source timestamp if available, and live/final/post-allotment status.
+- Identifies IPO stage: pre-open, Day 1/opening day, middle days, final day, post-close/pre-allotment, post-allotment/pre-listing, or listed.
+- Applies the Day 1 caveat: do not over-weight early retail/NII demand before final-day QIB behavior is visible.
 - Normalizes subscription categories without merging reserved buckets into retail.
 - Separates anchor allocation from public-window QIB subscription.
 - Estimates retail allotment with the exact lot/application formula when possible, otherwise labels the subscription-multiple proxy.
@@ -26,6 +28,7 @@ An answer fails critically if it:
 - Guarantees allotment, listing gain, or investment return.
 - Invents live subscription data, anchor investors, issue dates, lot size, or final status.
 - Calls intraday data final without a supporting source timestamp or final exchange/allotment document.
+- Treats Day 1/opening-day subscription as final demand quality, or gives an Apply-style conclusion from early retail/NII demand alone.
 - Applies mainboard thresholds or application mechanics blindly to SME IPOs.
 - Gives post-2025-07-01 SME bidding instructions without verifying the issue open date and official process source.
 - Advises duplicate applications under the same PAN or any application-rule workaround.
@@ -48,6 +51,7 @@ An answer fails critically if it:
 | SME/mainboard distinctions | q12, q13, q14 |
 | July 2025 SME process | q13, q14 |
 | Missing/conflicting live data | q02, q15, q16, q18 |
+| IPO stage and early-day caveats | q01, q04, q05, q16 |
 | Source timestamps | q02, q05, q15 |
 | T+3 timeline | q01, q17 |
 | Output compliance | q01, q18 |

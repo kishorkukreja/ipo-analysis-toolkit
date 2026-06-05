@@ -10,6 +10,8 @@
 | Confidence | High / Medium / Low |
 | Primary multiple | P/E / P/B / EV/EBITDA / EV/Sales / P/S / EV/AUM / P/EV / NAV |
 | Peer median premium/discount | Calculation and percent |
+| Valuation score | X/100 |
+| Evidence quality | Primary / Official fallback / Mixed / Secondary-only |
 | Main reason | One sentence |
 | Main caveat | One sentence |
 
@@ -92,6 +94,18 @@ State mainboard or SME implications. For SME IPOs, include liquidity, lot-size, 
 - What would justify the IPO price:
 - What could make the valuation misleading:
 - Research-support conclusion, without guaranteeing returns:
+
+## Advisor Handoff
+
+| Field | Value |
+|---|---|
+| department_score | X/100 |
+| score_label | Cheap / Fair / Expensive / Overvalued / Value trap risk |
+| confidence | High / Medium / Low |
+| evidence_quality | Primary / Official fallback / Mixed / Secondary-only |
+| hard_gates | None / list |
+| confidence_caps | None / list |
+| missing_data | None / list |
 
 ## Source Log
 
