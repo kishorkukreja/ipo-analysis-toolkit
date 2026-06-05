@@ -1,6 +1,6 @@
 # Eval Harness
 
-Each IPO skill must ship lightweight evaluation files so future threads can verify behavior without running live market actions.
+Each IPO skill ships lightweight evaluation files so future maintainers can verify behavior without running live market actions.
 
 ## Required Per-Skill Eval Layout
 
@@ -11,7 +11,7 @@ evals/[skill-name]/
   results.md
 ```
 
-Use `evals/_template` as the copy source.
+When adding a new skill, copy the layout from an existing eval folder and adjust the questions, rubric, and result notes for the new workflow.
 
 ## `questions.jsonl`
 
@@ -37,7 +37,7 @@ Record manual or automated eval runs with:
 
 ## Foundation-Level Checks
 
-Before a skill branch is considered ready, verify:
+Before a skill change is considered ready, verify:
 
 - `skills/[skill-name]/SKILL.md` exists.
 - `skills/[skill-name]/assets/output-template.md` exists.

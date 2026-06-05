@@ -1,45 +1,108 @@
 # Indian IPO Skills
 
-Separate installable skills plugin for Indian IPO research workflows across NSE/BSE mainboard and SME issues.
+Standalone skills plugin for Indian IPO research workflows across NSE/BSE mainboard, NSE Emerge, and BSE SME issues.
 
-This plugin is intentionally separate from `finance-trading-skills`. Users can install normal trading skills without IPO workflows, or install this IPO plugin independently when they want IPO calendar, DRHP, financials, GMP, subscription, allotment, application, listing-day, and scenario analysis.
+This package is separate from `finance-trading-skills`, so users can install general trading skills without IPO workflows, or install this plugin independently when they need IPO calendar, DRHP, financials, GMP, subscription, application, allotment, listing-day, and scenario analysis.
 
-## Scope
+## Install
 
-- Indian IPOs only: NSE/BSE mainboard, NSE Emerge, and BSE SME.
-- Retail-investor workflow support, with HNI/SME distinctions where required.
-- Research and decision support only. The skills must avoid unsupported investment advice and must state source caveats.
+Copy or symlink this plugin into your agent or Codex skills/plugin location according to your local setup. The important runtime folders are:
 
-## Skills To Build
+```text
+skills/
+docs/
+AGENTS.md
+CLAUDE.md
+```
 
-The foundation does not create individual skill folders. Each skill thread owns exactly one folder:
+The `evals/` folder is included as quality evidence and regression material. It is not required at runtime, but it is useful when changing a skill.
 
-| Skill | Purpose |
+## Skills
+
+| Skill | Use it when the user asks for... |
 |---|---|
-| `ipo-calendar` | Open, upcoming, and recently listed IPO discovery. |
-| `ipo-drhp-analyzer` | DRHP/RHP summary and issue-structure analysis. |
-| `ipo-financials-scorer` | Financial quality scorecard from offer documents. |
-| `ipo-red-flags-detector` | Warning-sign scan for retail investors. |
-| `ipo-peer-comparison` | Listed peer valuation and operating benchmark. |
-| `ipo-gmp-tracker` | Grey market premium trend and caveat handling. |
-| `ipo-subscription-tracker` | Category-wise subscription and allotment-odds interpretation. |
-| `ipo-apply-advisor` | Aggregated apply/avoid/neutral decision support. |
-| `ipo-allotment-checker` | Registrar/allotment status workflow. |
-| `ipo-listing-day-strategy` | Listing-day scenario and execution planning. |
-| `ipo-scenario-simulator` | Bull/base/bear post-listing scenario model. |
-| `ipo-application-guide` | Practical IPO application process guide. |
+| `ipo-calendar` | Open, upcoming, recently closed, or recently listed Indian IPOs. |
+| `ipo-drhp-analyzer` | DRHP/RHP/prospectus summaries, issue structure, objects of issue, risk factors, promoter details, litigation, or offer-document extraction. |
+| `ipo-financials-scorer` | A financial quality scorecard using revenue, margins, ROE/ROCE, debt, CFO, working capital, and sector adjustments. |
+| `ipo-red-flags-detector` | Governance, accounting, promoter, litigation, RPT, auditor, pledge, OFS, SME, or disclosure warning signs. |
+| `ipo-peer-comparison` | Valuation against listed peers, DRHP peer-table audits, premium/discount framing, and fair/expensive/cheap interpretation. |
+| `ipo-gmp-tracker` | Grey market premium level, trend, source reliability, implied listing price, and GMP caveats. |
+| `ipo-subscription-tracker` | Category-wise subscription, QIB/NII/retail demand quality, anchor quality, and rough retail allotment odds. |
+| `ipo-apply-advisor` | Final apply/avoid/neutral synthesis after combining financials, red flags, valuation, GMP, and subscription data. |
+| `ipo-allotment-checker` | Registrar lookup workflow, allotment status, UPI mandate/refund troubleshooting, and BOA/status caveats. |
+| `ipo-listing-day-strategy` | Listing-day sell/hold planning, opening-price scenarios, stop levels, order-type cautions, and tax notes. |
+| `ipo-scenario-simulator` | Bull/base/bear post-listing scenarios, valuation rerating, lock-in overhang, and 6- or 12-month ranges. |
+| `ipo-application-guide` | How to apply through UPI/ASBA, category selection, cut-off bidding, bid revision/cancellation, and SME process handling. |
 
-## Current Shared Assumptions
+## Usage Examples
 
-- Default Indian IPO listing timeline is T+3. Do not present T+6 as current default.
-- SME IPO process changes apply for issues opening on or after 2025-07-01. Where relevant, distinguish older SME issues from revised process guidance.
-- GMP is informal and unregulated. Treat it as sentiment, not as a standalone apply recommendation.
-- Mainboard and SME IPOs require different risk, liquidity, lot-size, and process framing.
-- Live IPO facts must be sourced from official exchange/SEBI/registrar pages first where practical, then reputable secondary sources with caveats.
+Ask for a specific skill by name when you want a focused workflow:
 
-## Per-Skill Required Shape
+```text
+Use ipo-calendar to list Indian mainboard and SME IPOs open this week. Include source timestamps and separate SME issues.
+```
 
-Each skill thread must create:
+```text
+Use ipo-drhp-analyzer for this DRHP: [paste URL]. Summarize issue structure, objects of issue, top risks, promoter background, litigation, related-party transactions, and retail caveats.
+```
+
+```text
+Use ipo-financials-scorer on this RHP and give me the 100-point scorecard with revenue growth, margins, ROE/ROCE, debt, CFO/PAT, working-capital quality, and confidence.
+```
+
+```text
+Use ipo-red-flags-detector for this SME IPO. Focus on related-party transactions, customer concentration, auditor notes, sudden profit spikes, use of proceeds, and liquidity risk.
+```
+
+```text
+Use ipo-peer-comparison to compare this IPO valuation with listed peers. Audit whether the DRHP peer set is fair and explain the premium or discount.
+```
+
+```text
+Use ipo-gmp-tracker for this IPO. Compare GMP across sources, calculate implied listing price, assess trend reliability, and tell me what GMP can and cannot prove.
+```
+
+```text
+Use ipo-subscription-tracker for day 3 data. Interpret QIB, NII, retail, anchor quality, and estimate retail allotment odds with caveats.
+```
+
+```text
+Use ipo-apply-advisor to combine the DRHP, financial score, red flags, peer valuation, GMP, and subscription data. End with Apply, Neutral, or Avoid and explain listing-gain vs long-term logic.
+```
+
+```text
+Use ipo-allotment-checker. The IPO closed on 2026-06-03 and I applied through UPI. Tell me where to check allotment, what dates to expect under T+3, and what to do if my mandate is still blocked.
+```
+
+```text
+Use ipo-listing-day-strategy. I got allotment and want a listing-day plan with sell zones, hold conditions, stop logic, tax caveats, and order-type warnings.
+```
+
+```text
+Use ipo-scenario-simulator to build 6-month bull/base/bear scenarios after listing. Include peer multiples, lock-in supply overhang, liquidity, and confidence.
+```
+
+```text
+Use ipo-application-guide. Explain whether I should apply as retail, sHNI, bHNI, or SME individual, how cut-off bidding works, and when cancellation or bid reduction is allowed.
+```
+
+You can also let the agent route the request naturally:
+
+```text
+Analyze this IPO end to end for a retail investor. Start with DRHP extraction, then financial score, red flags, peers, GMP, subscription, and final apply/avoid/neutral synthesis.
+```
+
+## Current Indian IPO Assumptions
+
+- Current default public issue listing timeline is T+3 working days from issue close. Treat T+6 as historical unless an older issue or official document proves otherwise.
+- SME IPO process changes apply for issues opening on or after 2025-07-01. Distinguish pre-change and post-change SME issues before giving application-process guidance.
+- GMP is informal, unregulated, and not guaranteed. Use it as a sentiment input, never as a standalone apply recommendation.
+- Mainboard and SME IPOs require different risk, liquidity, lot-size, process, and exit-friction framing.
+- Prefer official sources first: SEBI, NSE, BSE, issuer, BRLM, registrar, and offer documents. Use secondary sources only with caveats.
+
+## Quality Checks
+
+Each skill includes:
 
 ```text
 skills/[skill-name]/SKILL.md
@@ -50,9 +113,4 @@ evals/[skill-name]/rubric.md
 evals/[skill-name]/results.md
 ```
 
-The shared references are in `skills/shared/references/`. Build instructions and eval rules are in `docs/coordination/`.
-
-## Evaluation Gate
-
-Every skill must pass at least 18 of 20 rubric questions and have no critical failure in source reliability, safety, or regulatory timeline handling before integration.
-
+All 12 skills were evaluated with 20-question rubric datasets. The integration gate is at least 18/20 pass rate and zero critical failures in source reliability, safety, and regulatory-timeline handling.

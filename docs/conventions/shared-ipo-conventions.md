@@ -4,9 +4,9 @@ These conventions are shared by all 12 IPO skills.
 
 ## Plugin Boundary
 
-This repository is the final package boundary for IPO skills. The existing `finance-trading-skills` repository is a planning and research source only during this phase.
+This repository is the final package boundary for IPO skills. The existing `finance-trading-skills` repository is a separate trading-skills package and must not receive IPO skill folders.
 
-Per-skill threads must not write to:
+Maintainers must not write IPO plugin files to:
 
 - `finance-trading-skills/skills`
 - `finance-trading-skills/docs`
@@ -14,7 +14,7 @@ Per-skill threads must not write to:
 
 ## Required Skill Folder Contract
 
-Each skill thread creates:
+Each skill uses this layout:
 
 ```text
 skills/[skill-name]/
@@ -28,7 +28,7 @@ evals/[skill-name]/
   results.md
 ```
 
-The `skills/shared` folder is reserved for foundation-level references only.
+The `skills/shared` folder is reserved for plugin-wide references only.
 
 ## Trigger and Runtime Behavior
 
